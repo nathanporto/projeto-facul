@@ -1,17 +1,20 @@
 {
   "expo": {
-    "name": "desperdicio-zero",
+    "name": "Desperdício Zero",
     "slug": "desperdicio-zero",
+    "scheme": "desperdiciozero",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.grupo9.desperdiciozero"
     },
     "android": {
+      "package": "com.grupo9.desperdiciozero",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#E8F5E9",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -20,6 +23,46 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "O Desperdício Zero usa a câmera para fotografar os itens excedentes cadastrados.",
+          "photosPermission": "O Desperdício Zero acessa suas fotos para anexar a imagem de um item excedente.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#2E7D32",
+          "enableRemoteNotifications": false
+        }
+      ],
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "apiSyncUrl": "https://jsonplaceholder.typicode.com/posts",
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "4db9f7f7-0a7d-483a-8b5e-53e48b4ebc2c"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4db9f7f7-0a7d-483a-8b5e-53e48b4ebc2c"
     }
   }
 }
